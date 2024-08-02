@@ -1,8 +1,12 @@
 import s from './ContactForm.module.css';
 import { ErrorMessage, Formik, Form, Field } from 'formik';
+import { addContact } from '../../redux/phoneBook/actions';
+import { useDispatch } from 'react-redux';
 import * as Yup from 'yup';
 
-const ContactForm = ({ addContact }) => {
+const ContactForm = () => {
+   
+  const dispatch = useDispatch(); 
 
   const registerSchema = Yup.object({
     name: Yup.string()
@@ -22,8 +26,8 @@ const ContactForm = ({ addContact }) => {
     number: '',  
     };
 
-  const handleSubmit = (values, actions) => {
-    addContact(values.name, values.number);
+  const handleSubmit = (values, actions) => {    
+    dispatch(addContact(values.name, values.number));
     actions.resetForm();
   };
 

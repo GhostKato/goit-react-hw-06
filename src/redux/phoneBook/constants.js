@@ -1,0 +1,4 @@
+export const ADD_CONTACT = 'ADD_CONTACT';
+export const DELETE_CONTACT = 'DELETE_CONTACT';
+export const DECREMENT = 'DECREMENT';
+export const SET_SEARCH_QUERY = 'SET_SEARCH_QUERY';

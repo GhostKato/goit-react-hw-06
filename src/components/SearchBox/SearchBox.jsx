@@ -1,8 +1,13 @@
+import { useDispatch } from 'react-redux';
+import { setSearchQuery } from '../../redux/phoneBook/actions';
 import s from './SearchBox.module.css';
 
-const SearchBox = ({ onSearch }) => {
-  const handleChange = e => {
-    onSearch(e.target.value);
+const SearchBox = () => {  
+  
+  const dispatch = useDispatch();
+
+  const handleChange = e => {    
+    dispatch(setSearchQuery(e.target.value.toLowerCase()));
   };
 
   return (
