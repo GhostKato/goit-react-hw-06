@@ -7,7 +7,7 @@ function App() {
   
   return (
     <div className={s.container}>
-      <h1 className={s.title}>Phone book</h1>
+      <h1 className={s.title}>Phonebook</h1>
       <ContactForm/>
       <SearchBox />
       <ContactList/>
