@@ -1,14 +1,10 @@
 import { useDispatch } from 'react-redux';
-import { setSearchQuery } from '../../redux/phoneBook/actions';
 import s from './SearchBox.module.css';
+import { changeFilter } from '../../redux/filtersSlice';
 
 const SearchBox = () => {  
   
-  const dispatch = useDispatch();
-
-  const handleChange = e => {    
-    dispatch(setSearchQuery(e.target.value.toLowerCase()));
-  };
+  const dispatch = useDispatch();  
 
   return (
     <div className={s.container}>
@@ -17,7 +13,7 @@ const SearchBox = () => {
         <input
         className={s.input}        
         type='text'
-        onChange={handleChange}
+        onChange={e => dispatch(changeFilter(e.target.value))}
         />
         </label>
     </div>
